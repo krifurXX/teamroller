@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Answer, RoleScore } from './types';
 import { questions } from './data/questions';
-import { calculateResults, saveAnswers, loadAnswers, clearAnswers } from './utils/calculateResults';
+import { calculateResults, saveAnswers, clearAnswers } from './utils/calculateResults';
 import StartPage from './components/StartPage';
 import QuestionPage from './components/QuestionPage';
 import ResultsPage from './components/ResultsPage';
@@ -14,16 +14,11 @@ function App() {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [results, setResults] = useState<RoleScore[]>([]);
 
-  useEffect(() => {
-    const savedAnswers = loadAnswers();
-    if (savedAnswers.length > 0) {
-      setAnswers(savedAnswers);
-    }
-  }, []);
-
   const handleStart = () => {
-    setCurrentPage('questions');
+    clearAnswers();
+    setAnswers([]);
     setCurrentQuestionIndex(0);
+    setCurrentPage('questions');
   };
 
   const handleRestart = () => {
@@ -75,7 +70,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {currentPage === 'start' && (
-        <StartPage onStart={handleStart} hasSavedProgress={answers.length > 0} />
+        <StartPage onStart={handleStart} />
       )}
 
       {currentPage === 'questions' && (

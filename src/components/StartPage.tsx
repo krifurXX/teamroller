@@ -1,9 +1,8 @@
 interface StartPageProps {
   onStart: () => void;
-  hasSavedProgress: boolean;
 }
 
-export default function StartPage({ onStart, hasSavedProgress }: StartPageProps) {
+export default function StartPage({ onStart }: StartPageProps) {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-lg w-full">
@@ -32,17 +31,12 @@ export default function StartPage({ onStart, hasSavedProgress }: StartPageProps)
           </div>
 
           <button
+            type="button"
             onClick={onStart}
             className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-lg"
           >
-            {hasSavedProgress ? 'Fortsätt testet' : 'Starta testet'}
+            Starta testet
           </button>
-
-          {hasSavedProgress && (
-            <p className="text-center text-slate-500 text-sm mt-3">
-              Du har sparat framsteg sedan tidigare
-            </p>
-          )}
         </div>
       </div>
     </div>
