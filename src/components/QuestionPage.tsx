@@ -90,6 +90,7 @@ export default function QuestionPage({
         {/* Question Overview Toggle */}
         <div className="flex justify-center mb-4">
           <button
+            type="button"
             onClick={() => setShowOverview(!showOverview)}
             className="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1"
             aria-expanded={showOverview}
@@ -114,6 +115,7 @@ export default function QuestionPage({
                 const status = getQuestionStatus(i);
                 return (
                   <button
+                    type="button"
                     key={i}
                     onClick={() => {
                       onJumpToQuestion(i);
@@ -178,28 +180,24 @@ export default function QuestionPage({
                   {option.letter}
                 </span>
                 <p className="flex-1 text-slate-700 text-sm md:text-base">{option.text}</p>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 shrink-0">
                   <button
+                    type="button"
                     onClick={() => handleDecrement(option.letter)}
                     disabled={scores[option.letter] === 0}
-                    className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-bold text-slate-600"
+                    className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-bold text-slate-600 select-none"
                     aria-label={`Minska poäng för alternativ ${option.letter}`}
                   >
                     −
                   </button>
-                  <input
-                    type="number"
-                    min="0"
-                    max="10"
-                    value={scores[option.letter]}
-                    onChange={(e) => handleScoreChange(option.letter, parseInt(e.target.value) || 0)}
-                    className="w-12 h-8 text-center font-bold text-slate-800 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    aria-label={`Poäng för alternativ ${option.letter}`}
-                  />
+                  <span className="w-8 h-8 flex items-center justify-center font-bold text-slate-800">
+                    {scores[option.letter]}
+                  </span>
                   <button
+                    type="button"
                     onClick={() => handleIncrement(option.letter)}
                     disabled={totalScore >= 10}
-                    className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-bold text-slate-600"
+                    className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-bold text-slate-600 select-none"
                     aria-label={`Öka poäng för alternativ ${option.letter}`}
                   >
                     +
@@ -228,6 +226,7 @@ export default function QuestionPage({
 
           <div className="flex gap-3">
             <button
+              type="button"
               onClick={onBack}
               disabled={questionIndex === 0}
               className="flex-1 py-3 px-4 rounded-xl border-2 border-slate-300 text-slate-600 font-semibold hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
@@ -236,6 +235,7 @@ export default function QuestionPage({
               Tillbaka
             </button>
             <button
+              type="button"
               onClick={onNext}
               disabled={!isValid}
               className="flex-1 py-3 px-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed transition-colors"
