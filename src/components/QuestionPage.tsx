@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Question, Answer, OptionLetter } from '../types';
 import ProgressBar from './ProgressBar';
 
@@ -34,20 +34,11 @@ export default function QuestionPage({
   const [scores, setScores] = useState<Record<OptionLetter, number>>(
     currentAnswer?.scores || createEmptyScores()
   );
-  const [isAnimating, setIsAnimating] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsAnimating(true);
     setScores(currentAnswer?.scores || createEmptyScores());
-    const timer = setTimeout(() => setIsAnimating(false), 300);
-    return () => clearTimeout(timer);
   }, [question.id, currentAnswer]);
-
-  useEffect(() => {
-    containerRef.current?.focus();
-  }, [questionIndex]);
 
   const totalScore = OPTION_LETTERS.reduce((sum, letter) => sum + scores[letter], 0);
   const isValid = totalScore === 10;
@@ -79,12 +70,7 @@ export default function QuestionPage({
 
   return (
     <div className="min-h-screen p-4 py-8">
-      <div
-        className="max-w-2xl mx-auto"
-        ref={containerRef}
-        tabIndex={-1}
-        aria-label={`Fråga ${questionIndex + 1} av ${totalQuestions}`}
-      >
+      <div className="max-w-2xl mx-auto">
         <ProgressBar current={questionIndex} total={totalQuestions} />
 
         {/* Question Overview Toggle */}
@@ -152,11 +138,7 @@ export default function QuestionPage({
           </div>
         )}
 
-        <div
-          className={`bg-white rounded-2xl shadow-xl p-6 md:p-8 transition-all duration-300 ${
-            isAnimating ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'
-          }`}
-        >
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
           <h2 className="text-xl md:text-2xl font-bold text-slate-800 mb-2">
             {question.title}
           </h2>
@@ -170,10 +152,10 @@ export default function QuestionPage({
             {question.options.map((option) => (
               <div
                 key={option.letter}
-                className={`flex items-center gap-3 p-3 rounded-xl border-2 transition-all duration-200 ${
+                className={`flex items-center gap-3 p-3 rounded-xl border-2 ${
                   scores[option.letter] > 0
                     ? 'border-indigo-300 bg-indigo-50'
-                    : 'border-slate-200 bg-white hover:border-slate-300'
+                    : 'border-slate-200 bg-white'
                 }`}
               >
                 <span className="font-bold text-slate-400 w-6" aria-hidden="true">
