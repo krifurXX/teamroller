@@ -64,6 +64,10 @@ function App() {
     }
   };
 
+  const handleJumpToQuestion = (index: number) => {
+    setCurrentQuestionIndex(index);
+  };
+
   const currentAnswer = answers.find(
     (a) => a.questionId === questions[currentQuestionIndex]?.id
   );
@@ -80,9 +84,11 @@ function App() {
           questionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
           currentAnswer={currentAnswer}
+          allAnswers={answers}
           onAnswer={handleAnswer}
           onNext={handleNext}
           onBack={handleBack}
+          onJumpToQuestion={handleJumpToQuestion}
         />
       )}
 

@@ -18,16 +18,23 @@ export default function RoleCard({ role, score, rank, maxScore }: RoleCardProps)
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                style={{ backgroundColor: role.color }}
-              >
-                {rank}
+            <div className="flex items-center gap-3 mb-1">
+              <span className="text-3xl" role="img" aria-label={role.name}>
+                {role.icon}
               </span>
-              <h3 className="text-xl font-bold text-slate-800">{role.name}</h3>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-xs"
+                    style={{ backgroundColor: role.color }}
+                  >
+                    {rank}
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-800">{role.name}</h3>
+                </div>
+                <p className="text-slate-500 text-sm">{role.englishName}</p>
+              </div>
             </div>
-            <p className="text-slate-500 text-sm">{role.englishName}</p>
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold text-slate-800">{score}</div>

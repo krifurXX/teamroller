@@ -5,6 +5,7 @@ export const roles: Role[] = [
     id: 'PL',
     name: 'Idéspruta',
     englishName: 'Plant',
+    icon: '💡',
     description: 'Kreativ problemlösare som kommer med nya idéer och innovativa lösningar.',
     strengths: [
       'Kreativ och fantasifull',
@@ -27,6 +28,7 @@ export const roles: Role[] = [
     id: 'CO',
     name: 'Samordnare',
     englishName: 'Coordinator',
+    icon: '👑',
     description: 'Naturlig ledare som får gruppen att arbeta mot gemensamma mål.',
     strengths: [
       'Bra på att delegera uppgifter',
@@ -49,6 +51,7 @@ export const roles: Role[] = [
     id: 'IM',
     name: 'Genomförare',
     englishName: 'Implementer',
+    icon: '⚙️',
     description: 'Praktisk och pålitlig person som omvandlar idéer till konkreta handlingar.',
     strengths: [
       'Disciplinerad och pålitlig',
@@ -71,6 +74,7 @@ export const roles: Role[] = [
     id: 'ME',
     name: 'Analyserare',
     englishName: 'Monitor Evaluator',
+    icon: '🔍',
     description: 'Objektiv tänkare som analyserar alternativ och fattar välgrundade beslut.',
     strengths: [
       'Strategisk och objektiv',
@@ -93,6 +97,7 @@ export const roles: Role[] = [
     id: 'SP',
     name: 'Specialist',
     englishName: 'Specialist',
+    icon: '🎓',
     description: 'Expert med djup kunskap inom sitt område som bidrar med teknisk kompetens.',
     strengths: [
       'Djup expertkunskap',
@@ -115,6 +120,7 @@ export const roles: Role[] = [
     id: 'RI',
     name: 'Kontaktskapare',
     englishName: 'Resource Investigator',
+    icon: '🤝',
     description: 'Utåtriktad nätverkare som hittar resurser och möjligheter utanför gruppen.',
     strengths: [
       'Entusiastisk och kommunikativ',
@@ -137,6 +143,7 @@ export const roles: Role[] = [
     id: 'CF',
     name: 'Avslutare',
     englishName: 'Completer Finisher',
+    icon: '✅',
     description: 'Noggrann perfektionist som säkerställer kvalitet och att deadlines hålls.',
     strengths: [
       'Noggrann och detaljorienterad',
@@ -159,6 +166,7 @@ export const roles: Role[] = [
     id: 'SH',
     name: 'Pådrivare',
     englishName: 'Shaper',
+    icon: '🚀',
     description: 'Dynamisk och målinriktad person som driver gruppen framåt under press.',
     strengths: [
       'Modig och handlingskraftig',

@@ -22,6 +22,7 @@ export interface Role {
   weaknesses: string[];
   tips: string[];
   color: string;
+  icon: string;
 }
 
 export interface Answer {
