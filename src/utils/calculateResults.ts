@@ -1,12 +1,12 @@
 import { Answer, RoleId, RoleScore, OptionLetter } from '../types';
 import { scoringMatrix } from '../data/scoringMatrix';
 
-const ALL_ROLES: RoleId[] = ['PL', 'CO', 'IM', 'ME', 'SP', 'RI', 'CF', 'SH'];
+const ALL_ROLES: RoleId[] = ['PL', 'CO', 'IM', 'ME', 'TW', 'RI', 'CF', 'SH'];
 const ALL_OPTIONS: OptionLetter[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 export function calculateResults(answers: Answer[]): RoleScore[] {
   const roleScores: Record<RoleId, number> = {
-    PL: 0, CO: 0, IM: 0, ME: 0, SP: 0, RI: 0, CF: 0, SH: 0,
+    PL: 0, CO: 0, IM: 0, ME: 0, TW: 0, RI: 0, CF: 0, SH: 0,
   };
 
   for (const answer of answers) {

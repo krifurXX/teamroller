@@ -1,4 +1,4 @@
-export type RoleId = 'PL' | 'CO' | 'IM' | 'ME' | 'SP' | 'RI' | 'CF' | 'SH';
+export type RoleId = 'PL' | 'CO' | 'IM' | 'ME' | 'TW' | 'RI' | 'CF' | 'SH';
 
 export type OptionLetter = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
 

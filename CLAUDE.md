@@ -48,7 +48,7 @@ src/
 - **Frågeöversikt** - "Visa alla frågor" för att hoppa mellan frågor
 - **Förklaringstext** - Instruktion på varje fråga
 - **Animationer** - Smooth övergångar mellan frågor och på resultatsidan
-- **Rollikoner** - Emoji för snabb igenkänning (💡🚀👑⚙️🔍🎓🤝✅)
+- **Rollikoner** - Emoji för snabb igenkänning (💡🚀👑⚙️🔍👥🤝✅)
 
 ### Tillgänglighet
 - Aria-labels på alla interaktiva element
@@ -66,7 +66,7 @@ Kritisk fil som mappar varje svarsalternativ till rätt teamroll. Verifierad mot
 
 ```typescript
 // Format: fråga -> bokstav -> roll
-1: { A: 'RI', B: 'SP', C: 'PL', D: 'CO', E: 'CF', F: 'SH', G: 'IM', H: 'ME' }
+1: { A: 'RI', B: 'TW', C: 'PL', D: 'CO', E: 'CF', F: 'SH', G: 'IM', H: 'ME' }
 ```
 
 ### De 8 rollerna (RoleId + ikon)
@@ -74,7 +74,7 @@ Kritisk fil som mappar varje svarsalternativ till rätt teamroll. Verifierad mot
 - `CO` 👑 Samordnare (Coordinator)
 - `IM` ⚙️ Genomförare (Implementer)
 - `ME` 🔍 Analyserare (Monitor Evaluator)
-- `SP` 🎓 Specialist
+- `TW` 👥 Lagarbetare (Teamworker)
 - `RI` 🤝 Kontaktskapare (Resource Investigator)
 - `CF` ✅ Avslutare (Completer Finisher)
 - `SH` 🚀 Pådrivare (Shaper)
@@ -141,7 +141,8 @@ vercel --prod    # Deploya till Vercel
 
 ## PDF-dokumentation
 
-- `TEAMROLLER TESTFRÅGOR.pdf` - Originalfrågorna på svenska
-- `TEAMROLLER poängsammanställning.pdf` - Poängmappningstabellen
+- `TEAMROLLER_TESTFRAGOR_korrigerad.pdf` - Korrigerade frågor på svenska
+- `TEAMROLLER_POANGSAMMANSTALLNING_korrigerad.pdf` - Korrigerad poängmappningstabell
+- `Teamroller_beskrivningar_korrigerad.pdf` - Rollbeskrivningar
 
 Vid ändringar i frågor eller poängsättning, verifiera alltid mot dessa PDF:er.
