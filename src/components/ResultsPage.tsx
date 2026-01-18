@@ -28,7 +28,7 @@ ${role.strengths.map(s => `  • ${s}`).join('\n')}
 ⚠ FALLGROPAR:
 ${role.weaknesses.map(w => `  • ${w}`).join('\n')}
 
-💡 TIPS FÖR SAMARBETE:
+💡 TIPS FÖR DIG I TEAMARBETE:
 ${role.tips.map(t => `  • ${t}`).join('\n')}`;
     }).join('\n');
 
@@ -150,7 +150,7 @@ verktyg för reflektion och dialog, inte som en absolut sanning.
       <ul>${role.weaknesses.map(w => `<li>• ${w}</li>`).join('')}</ul>
     </div>
     <div class="section section-blue">
-      <h4>Tips för samarbete</h4>
+      <h4>Tips för dig i teamarbete</h4>
       <ul>${role.tips.map(t => `<li>• ${t}</li>`).join('')}</ul>
     </div>
   </div>`;

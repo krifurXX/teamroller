@@ -72,7 +72,7 @@ export default function RoleCard({ role, score, rank, maxScore }: RoleCardProps)
         </div>
 
         <div className="mt-4 bg-blue-50 rounded-xl p-4">
-          <h4 className="font-semibold text-blue-800 mb-2">Tips för samarbete</h4>
+          <h4 className="font-semibold text-blue-800 mb-2">Tips för dig i teamarbete</h4>
           <ul className="text-blue-700 text-sm space-y-1">
             {role.tips.map((t, i) => (
               <li key={i}>• {t}</li>
